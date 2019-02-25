@@ -63,6 +63,13 @@ const exportCustomerData = (customers) => {
     })
 }
 
+generateCustomerData('./data/sample-data.csv')
+.then(exportCustomerData)
+.catch((err) => {
+  console.log(err)
+})
+
+
 fetch(process.env.API_URL, {
   headers: {
     'authorization': `Bearer ${process.env.API_TOKEN}`,
